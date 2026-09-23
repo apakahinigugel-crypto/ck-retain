@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Retain CK Astro — QC Retain Sample Control</title>
+<title>Retain CK Astro — Kontrol Sampel Retain QC</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -361,20 +361,20 @@
       </svg>
       <div class="brand-text">
         <span class="brand-name">Retain CK Astro</span>
-        <span class="brand-tag">QC Retain Sample Control</span>
+        <span class="brand-tag">Kontrol Sampel Retain QC</span>
       </div>
     </div>
     <div class="whoami">
-      <label for="whoName" class="sr-only">Your name</label>
-      <input id="whoName" type="text" placeholder="Your name" autocomplete="off" />
+      <label for="whoName" class="sr-only">Nama Anda</label>
+      <input id="whoName" type="text" placeholder="Nama Anda" autocomplete="off" />
     </div>
   </header>
 
   <nav class="tabs" role="tablist">
-    <button class="tab" data-view="products" role="tab" aria-selected="false">Products</button>
-    <button class="tab" data-view="login" role="tab" aria-selected="false">Log In Sample</button>
-    <button class="tab active" data-view="dispose" role="tab" aria-selected="true">To Dispose <span class="tab-badge" id="disposeBadge" hidden>0</span></button>
-    <button class="tab" data-view="history" role="tab" aria-selected="false">All Samples</button>
+    <button class="tab" data-view="products" role="tab" aria-selected="false">Produk</button>
+    <button class="tab" data-view="login" role="tab" aria-selected="false">Catat Sampel</button>
+    <button class="tab active" data-view="dispose" role="tab" aria-selected="true">Perlu Dibuang <span class="tab-badge" id="disposeBadge" hidden>0</span></button>
+    <button class="tab" data-view="history" role="tab" aria-selected="false">Semua Sampel</button>
   </nav>
 
   <main>
@@ -383,40 +383,40 @@
     <section class="view" id="view-products">
       <div class="section-head">
         <div>
-          <h2>Products</h2>
-          <p class="section-sub">Set each product's storage location and maximum storage days once — logging a sample fills these in for you.</p>
+          <h2>Produk</h2>
+          <p class="section-sub">Atur lokasi penyimpanan dan masa simpan maksimum tiap produk sekali saja — mencatat sampel akan otomatis mengisi ini.</p>
         </div>
       </div>
 
       <form class="card" id="productForm" style="padding:18px; margin-bottom:18px;">
         <div class="form-grid">
           <div class="field span-2">
-            <label class="req" for="p_name">Product name</label>
-            <input id="p_name" required placeholder="e.g. Coconut Water 330ml" />
+            <label class="req" for="p_name">Nama Produk</label>
+            <input id="p_name" required placeholder="cth. Air Kelapa 330ml" />
           </div>
           <div class="field">
-            <label class="req" for="p_shelflife">Shelf life (days)</label>
-            <input id="p_shelflife" type="number" min="1" step="1" required placeholder="e.g. 90" />
+            <label class="req" for="p_shelflife">Umur Simpan (hari)</label>
+            <input id="p_shelflife" type="number" min="1" step="1" required placeholder="cth. 90" />
           </div>
           <div class="field">
-            <label class="req" for="p_days">Max storage (days)</label>
-            <input id="p_days" type="number" min="1" step="1" required placeholder="e.g. 14" />
+            <label class="req" for="p_days">Masa Simpan Maksimum (hari)</label>
+            <input id="p_days" type="number" min="1" step="1" required placeholder="cth. 14" />
           </div>
           <div class="field span-2">
-            <label class="req" for="p_location">Storage location</label>
-            <input id="p_location" required placeholder="e.g. Retain fridge B, shelf 2" />
+            <label class="req" for="p_location">Lokasi Penyimpanan</label>
+            <input id="p_location" required placeholder="cth. Kulkas Retain B, rak 2" />
           </div>
         </div>
         <div class="modal-actions" style="justify-content:flex-start; margin-top:14px;">
-          <button type="submit" class="btn btn-primary" id="productSubmitBtn">Add product</button>
-          <button type="button" class="btn btn-ghost" id="productCancelEdit" hidden>Cancel</button>
+          <button type="submit" class="btn btn-primary" id="productSubmitBtn">Tambah Produk</button>
+          <button type="button" class="btn btn-ghost" id="productCancelEdit" hidden>Batal</button>
         </div>
       </form>
 
       <div class="table-wrap">
         <table>
           <thead>
-            <tr><th>Product</th><th>Shelf life</th><th>Max storage</th><th>Storage location</th><th></th></tr>
+            <tr><th>Produk</th><th>Umur Simpan</th><th>Masa Simpan</th><th>Lokasi Penyimpanan</th><th></th></tr>
           </thead>
           <tbody id="productsBody"></tbody>
         </table>
@@ -428,8 +428,8 @@
     <section class="view" id="view-login">
       <div class="section-head">
         <div>
-          <h2>Log in a retain sample</h2>
-          <p class="section-sub">Pick the product — storage details and the disposal date fill in automatically.</p>
+          <h2>Catat sampel retain masuk</h2>
+          <p class="section-sub">Pilih produk — detail penyimpanan dan tanggal pembuangan akan terisi otomatis.</p>
         </div>
       </div>
 
@@ -438,55 +438,55 @@
       <form class="card" id="loginForm" style="padding:20px;">
         <div class="form-grid">
           <div class="field span-2">
-            <label class="req" for="f_product">Product name</label>
+            <label class="req" for="f_product">Nama Produk</label>
             <select id="f_product" required>
-              <option value="" disabled selected>Select a product…</option>
+              <option value="" disabled selected>Pilih produk…</option>
             </select>
           </div>
 
           <div class="field">
-            <label for="f_batch">Batch / lot no.</label>
-            <input id="f_batch" placeholder="e.g. CW-0921A" />
+            <label for="f_batch">No. Batch/Lot</label>
+            <input id="f_batch" placeholder="cth. CW-0921A" />
           </div>
           <div class="field">
-            <label for="f_qty">Quantity retained</label>
-            <input id="f_qty" placeholder="e.g. 3 bottles" />
+            <label for="f_qty">Jumlah Disimpan</label>
+            <input id="f_qty" placeholder="cth. 3 botol" />
           </div>
 
           <div class="field">
-            <label>Production date</label>
+            <label>Tanggal Produksi</label>
             <div class="static-field" id="f_today_display">—</div>
           </div>
           <div class="field">
-            <label>Shelf life (days)</label>
-            <div class="static-field" id="f_shelflife_display">Select a product</div>
+            <label>Umur Simpan (hari)</label>
+            <div class="static-field" id="f_shelflife_display">Pilih produk</div>
           </div>
 
           <div class="field">
-            <label for="f_retention">Max storage (days)</label>
+            <label for="f_retention">Masa Simpan Maksimum (hari)</label>
             <input id="f_retention" type="number" min="1" step="1" />
           </div>
           <div class="field">
-            <label for="f_location">Storage location</label>
-            <input id="f_location" placeholder="Auto-filled from product" />
+            <label for="f_location">Lokasi Penyimpanan</label>
+            <input id="f_location" placeholder="Terisi otomatis dari produk" />
           </div>
 
           <div class="field span-2" id="duePreviewWrap"></div>
 
           <div class="field span-2">
-            <label for="f_notes">Notes</label>
-            <textarea id="f_notes" placeholder="Anything worth flagging — appearance, deviations, etc."></textarea>
+            <label for="f_notes">Catatan</label>
+            <textarea id="f_notes" placeholder="Catatan penting — penampilan, penyimpangan, dll."></textarea>
           </div>
 
           <div class="field span-2">
-            <label class="req" for="f_loggedby">Logged by</label>
-            <input id="f_loggedby" required placeholder="Your name" />
+            <label class="req" for="f_loggedby">Dicatat oleh</label>
+            <input id="f_loggedby" required placeholder="Nama Anda" />
           </div>
         </div>
 
         <div class="modal-actions" style="justify-content:flex-start; margin-top:20px;">
-          <button type="submit" class="btn btn-primary">Log in sample</button>
-          <button type="reset" class="btn btn-ghost" id="loginReset">Clear form</button>
+          <button type="submit" class="btn btn-primary">Catat Sampel Masuk</button>
+          <button type="reset" class="btn btn-ghost" id="loginReset">Bersihkan Form</button>
         </div>
       </form>
     </section>
@@ -495,8 +495,8 @@
     <section class="view active" id="view-dispose">
       <div class="section-head">
         <div>
-          <h2>To dispose</h2>
-          <p class="section-sub">Sorted by how urgent — overdue samples float to the top.</p>
+          <h2>Perlu Dibuang</h2>
+          <p class="section-sub">Dikelompokkan berdasarkan lokasi penyimpanan.</p>
         </div>
       </div>
       <div id="reminderBanner"></div>
@@ -507,31 +507,33 @@
     <section class="view" id="view-history">
       <div class="section-head">
         <div>
-          <h2>All samples</h2>
-          <p class="section-sub">Full log of everything retained and disposed.</p>
+          <h2>Semua Sampel</h2>
+          <p class="section-sub">Catatan lengkap semua sampel yang disimpan dan dibuang.</p>
         </div>
       </div>
 
       <div class="toolbar">
-        <input type="search" id="searchBox" placeholder="Search product or batch…" />
+        <input type="search" id="searchBox" placeholder="Cari produk atau batch…" />
         <select id="statusFilter">
-          <option value="all">All statuses</option>
-          <option value="stored">In retain</option>
-          <option value="disposed">Disposed</option>
+          <option value="all">Semua status</option>
+          <option value="stored">Tersimpan</option>
+          <option value="disposed">Dibuang</option>
         </select>
+        <button type="button" class="btn btn-ghost btn-sm" id="exportCsvBtn">⬇ Ekspor CSV</button>
       </div>
 
       <div class="table-wrap">
         <table>
           <thead>
             <tr>
-              <th data-sort="productName">Product <span class="sort-arrow">↕</span></th>
+              <th data-sort="productName">Produk <span class="sort-arrow">↕</span></th>
               <th data-sort="batchNo">Batch <span class="sort-arrow">↕</span></th>
-              <th data-sort="shelfLifeDays">Shelf life <span class="sort-arrow">↕</span></th>
-              <th data-sort="storedDate">Retained on <span class="sort-arrow">↕</span></th>
-              <th data-sort="dueDate">Dispose by <span class="sort-arrow">↕</span></th>
+              <th data-sort="shelfLifeDays">Umur Simpan <span class="sort-arrow">↕</span></th>
+              <th data-sort="storedDate">Disimpan pada <span class="sort-arrow">↕</span></th>
+              <th data-sort="dueDate">Buang Sebelum <span class="sort-arrow">↕</span></th>
               <th data-sort="status">Status <span class="sort-arrow">↕</span></th>
-              <th data-sort="disposedDate">Disposed on <span class="sort-arrow">↕</span></th>
+              <th data-sort="disposedDate">Dibuang pada <span class="sort-arrow">↕</span></th>
+              <th data-sort="disposalNotes">Catatan Pembuangan <span class="sort-arrow">↕</span></th>
             </tr>
           </thead>
           <tbody id="historyBody"></tbody>
@@ -544,26 +546,26 @@
 
   <p class="storage-note" id="storageNote">
     <span class="dot" id="storageDot"></span>
-    <span id="storageNoteText">Connecting…</span>
+    <span id="storageNoteText">Menghubungkan…</span>
   </p>
 </div>
 
 <!-- Dispose confirm modal -->
 <div class="modal-backdrop" id="disposeModalBackdrop">
   <div class="modal">
-    <h3>Log out for disposal</h3>
-    <p class="modal-sub" id="disposeModalSub">Confirm this retain sample has been disposed.</p>
+    <h3>Catat keluar untuk dibuang</h3>
+    <p class="modal-sub" id="disposeModalSub">Konfirmasi bahwa sampel retain ini telah dibuang.</p>
     <div class="field" style="margin-bottom:12px;">
-      <label class="req" for="m_disposedby">Disposed by</label>
-      <input id="m_disposedby" required placeholder="Your name" />
+      <label class="req" for="m_disposedby">Dibuang oleh</label>
+      <input id="m_disposedby" required placeholder="Nama Anda" />
     </div>
     <div class="field">
-      <label for="m_disposenotes">Notes (optional)</label>
-      <textarea id="m_disposenotes" placeholder="Method, deviations, anything to note"></textarea>
+      <label for="m_disposenotes">Catatan (opsional)</label>
+      <textarea id="m_disposenotes" placeholder="Metode, penyimpangan, hal lain yang perlu dicatat"></textarea>
     </div>
     <div class="modal-actions">
-      <button class="btn btn-ghost" id="disposeCancel">Cancel</button>
-      <button class="btn btn-danger" id="disposeConfirm">Confirm disposal</button>
+      <button class="btn btn-ghost" id="disposeCancel">Batal</button>
+      <button class="btn btn-danger" id="disposeConfirm">Konfirmasi Pembuangan</button>
     </div>
   </div>
 </div>
@@ -600,7 +602,7 @@
   function fmtDate(iso){
     if(!iso) return '—';
     const dt = dateFromISO(iso);
-    return dt.toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric' });
+    return dt.toLocaleDateString('id-ID', { day:'numeric', month:'short', year:'numeric' });
   }
   function isWednesday(iso){ return dateFromISO(iso).getDay() === 3; }
   function nextWednesdayISO(iso){
@@ -713,18 +715,18 @@
         try{
           supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
           storeMode = 'supabase';
-          setStorageNote(true, 'Synced via Supabase');
+          setStorageNote(true, 'Tersinkron via Supabase');
           await this.reloadAll();
           this.subscribeRealtime();
         }catch(e){
           console.error('Supabase connection failed', e);
           storeMode = 'local';
-          setStorageNote(false, 'Saved on this device only (Supabase connection failed)');
+          setStorageNote(false, 'Hanya tersimpan di perangkat ini (koneksi Supabase gagal)');
           this.loadLocal();
         }
       } else {
         storeMode = 'local';
-        setStorageNote(false, configured ? 'Saved on this device only (Supabase library did not load)' : 'Saved on this device only (Supabase not configured yet)');
+        setStorageNote(false, configured ? 'Hanya tersimpan di perangkat ini (pustaka Supabase gagal dimuat)' : 'Hanya tersimpan di perangkat ini (Supabase belum diatur)');
         this.loadLocal();
       }
       // Unlock the forms as soon as we know which mode we're in — never make
@@ -737,9 +739,9 @@
         supabaseClient.from('products').select('*').order('name'),
         supabaseClient.from('samples').select('*').order('stored_date', { ascending: false })
       ]);
-      if(prodRes.error){ console.error(prodRes.error); showToast('Could not load products from Supabase.'); }
+      if(prodRes.error){ console.error(prodRes.error); showToast('Gagal memuat data produk dari Supabase.'); }
       else { products = (prodRes.data || []).map(productFromRow); }
-      if(sampRes.error){ console.error(sampRes.error); showToast('Could not load samples from Supabase.'); }
+      if(sampRes.error){ console.error(sampRes.error); showToast('Gagal memuat data sampel dari Supabase.'); }
       else { samples = (sampRes.data || []).map(sampleFromRow); }
       renderAll();
     },
@@ -830,19 +832,19 @@
   function setReady(){
     const loginBtn = $('#loginForm button[type="submit"]');
     loginBtn.disabled = false;
-    loginBtn.textContent = 'Log in sample';
+    loginBtn.textContent = 'Catat Sampel Masuk';
     if(!editingProductId){
       $('#productSubmitBtn').disabled = false;
-      $('#productSubmitBtn').textContent = 'Add product';
+      $('#productSubmitBtn').textContent = 'Tambah Produk';
     }
     renderAll();
   }
   function setLoading(){
     const loginBtn = $('#loginForm button[type="submit"]');
     loginBtn.disabled = true;
-    loginBtn.textContent = 'Loading…';
+    loginBtn.textContent = 'Memuat…';
     $('#productSubmitBtn').disabled = true;
-    $('#productSubmitBtn').textContent = 'Loading…';
+    $('#productSubmitBtn').textContent = 'Memuat…';
   }
 
   /* ---------------- name persistence (per-device convenience) ---------------- */
@@ -893,16 +895,16 @@
     return Object.assign({}, s, { diffDays: diff, tone });
   }
   function statusPillHtml(s){
-    if(s.status === 'disposed'){ return '<span class="pill pill-muted">Disposed</span>'; }
+    if(s.status === 'disposed'){ return '<span class="pill pill-muted">Dibuang</span>'; }
     const info = withStatusInfo(s);
     if(info.tone === 'danger'){
       const n = Math.abs(info.diffDays);
-      return `<span class="pill pill-danger">${n===0?'Due today':'Overdue ' + n + 'd'}</span>`;
+      return `<span class="pill pill-danger">${n===0?'Jatuh tempo hari ini':'Lewat batas ' + n + 'h'}</span>`;
     }
     if(info.tone === 'warn'){
-      return `<span class="pill pill-warn">${info.diffDays===0?'Due today':'Due in ' + info.diffDays + 'd'}</span>`;
+      return `<span class="pill pill-warn">${info.diffDays===0?'Jatuh tempo hari ini':info.diffDays + ' hari lagi'}</span>`;
     }
-    return `<span class="pill pill-ok">In retain</span>`;
+    return `<span class="pill pill-ok">Tersimpan</span>`;
   }
 
   /* ---------------- render: reminder banner (now lives on the To Dispose page) ---------------- */
@@ -920,8 +922,8 @@
         <div class="banner wed">
           <div class="banner-icon">🌊</div>
           <div>
-            <div class="banner-title">It's Wednesday — disposal day</div>
-            <div class="banner-text">${n} sample${n===1?'':'s'} ${n===1?'is':'are'} ready to go.</div>
+            <div class="banner-title">Ini hari Rabu — hari pembuangan</div>
+            <div class="banner-text">${n} sampel siap untuk dibuang.</div>
           </div>
         </div>`;
     } else if(overdue.length){
@@ -929,8 +931,8 @@
         <div class="banner overdue">
           <div class="banner-icon">⏰</div>
           <div>
-            <div class="banner-title">${overdue.length} sample${overdue.length===1?'':'s'} overdue for disposal</div>
-            <div class="banner-text">These passed their storage limit before this Wednesday — best to clear them now.</div>
+            <div class="banner-title">${overdue.length} sampel lewat batas waktu pembuangan</div>
+            <div class="banner-text">Sampel ini sudah melewati masa simpan sebelum hari Rabu — sebaiknya segera dibuang.</div>
           </div>
         </div>`;
     } else if(wed){
@@ -938,8 +940,8 @@
         <div class="banner clear">
           <div class="banner-icon">✅</div>
           <div>
-            <div class="banner-title">It's Wednesday, and you're all caught up</div>
-            <div class="banner-text">Nothing due for disposal today.</div>
+            <div class="banner-title">Hari Rabu, dan semua sudah beres</div>
+            <div class="banner-text">Tidak ada sampel yang perlu dibuang hari ini.</div>
           </div>
         </div>`;
     } else {
@@ -949,22 +951,16 @@
         <div class="banner info">
           <div class="banner-icon">🗓️</div>
           <div>
-            <div class="banner-title">Next disposal day: ${fmtDate(nextWed)}</div>
-            <div class="banner-text">${dueByThen ? dueByThen + ' sample' + (dueByThen===1?'':'s') + ' will be due by then.' : 'Nothing due by then yet.'}</div>
+            <div class="banner-title">Hari pembuangan berikutnya: ${fmtDate(nextWed)}</div>
+            <div class="banner-text">${dueByThen ? dueByThen + ' sampel akan jatuh tempo saat itu.' : 'Belum ada sampel yang jatuh tempo sampai saat itu.'}</div>
           </div>
         </div>`;
     }
   }
 
-  /* ---------------- render: to-dispose view ---------------- */
+  /* ---------------- render: to-dispose view (grouped by storage location) ---------------- */
   function renderDispose(){
-    const today = todayISO();
-    const nextWed = nextWednesdayISO(today);
     const inStore = storedSamples().map(withStatusInfo).sort((a,b)=> a.dueDate < b.dueDate ? -1 : 1);
-
-    const overdue = inStore.filter(s=> s.diffDays < 0);
-    const dueByWed = inStore.filter(s=> s.diffDays >= 0 && s.dueDate <= nextWed);
-    const upcoming = inStore.filter(s=> s.dueDate > nextWed);
 
     // tab badge
     const badge = $('#disposeBadge');
@@ -972,38 +968,46 @@
     if(urgentCount > 0){ badge.hidden = false; badge.textContent = urgentCount; }
     else { badge.hidden = true; }
 
+    // group by storage location — samples are already sorted by due date ascending,
+    // so each group's list stays in urgency order (most urgent first) as we build it
+    const groups = {};
+    inStore.forEach(s=>{
+      const loc = (s.location && s.location.trim()) ? s.location.trim() : 'Tanpa Lokasi';
+      (groups[loc] = groups[loc] || []).push(s);
+    });
+    const groupNames = Object.keys(groups).sort((a,b)=> groups[a][0].dueDate < groups[b][0].dueDate ? -1 : 1);
+
     function rowHtml(s){
       return `
       <div class="list-row">
         <div class="list-row-main">
           <div class="list-row-title">${escapeHtml(s.productName)}</div>
-          <div class="list-row-sub">${escapeHtml(s.batchNo||'No batch no.')} · ${escapeHtml(s.location||'No location set')} · Shelf life ${s.shelfLifeDays ? s.shelfLifeDays + 'd' : '—'} · Dispose by ${fmtDate(s.dueDate)}</div>
+          <div class="list-row-sub">${escapeHtml(s.batchNo||'Tanpa No. Batch')} · Umur simpan ${s.shelfLifeDays ? s.shelfLifeDays + 'h' : '—'} · Buang sebelum ${fmtDate(s.dueDate)}</div>
         </div>
         <div class="list-row-side">
           ${statusPillHtml(s)}
-          <button class="btn btn-danger btn-sm" data-dispose="${s.id}">Log out</button>
+          <button class="btn btn-danger btn-sm" data-dispose="${s.id}">Catat Keluar</button>
         </div>
       </div>`;
     }
-    function block(title, subtitle, list){
-      if(!list.length) return '';
+    function groupBlock(location, list){
+      const overdueCount = list.filter(s=> s.diffDays < 0).length;
+      const subtitle = overdueCount > 0
+        ? `${list.length} sampel · ${overdueCount} lewat batas`
+        : `${list.length} sampel`;
       return `
         <div class="card" style="margin-bottom:16px;">
           <div style="padding:14px 16px 4px;">
-            <h3 style="font-size:15px;">${title}</h3>
+            <h3 style="font-size:15px;">❄️ ${escapeHtml(location)}</h3>
             <p class="section-sub">${subtitle}</p>
           </div>
           ${list.map(rowHtml).join('')}
         </div>`;
     }
 
-    let html = '';
-    html += block('Overdue', 'Already past the storage limit — dispose these first.', overdue);
-    html += block('Due by this Wednesday', fmtDate(nextWed) + ' is the next disposal day.', dueByWed);
-    html += block('Coming up', 'Not due yet, but here for visibility.', upcoming);
-
-    if(!overdue.length && !dueByWed.length && !upcoming.length){
-      html = `<div class="card empty"><span class="emoji">🎉</span><strong>Nothing to dispose right now</strong>Log in a sample and it'll show up here once due.</div>`;
+    let html = groupNames.map(loc=> groupBlock(loc, groups[loc])).join('');
+    if(!groupNames.length){
+      html = `<div class="card empty"><span class="emoji">🎉</span><strong>Tidak ada yang perlu dibuang sekarang</strong>Catat sampel dan akan muncul di sini saat sudah waktunya.</div>`;
     }
 
     $('#disposeLists').innerHTML = html;
@@ -1013,7 +1017,7 @@
   }
 
   /* ---------------- render: history table ---------------- */
-  function renderHistory(){
+  function getFilteredSortedSamples(){
     const q = ($('#searchBox').value || '').trim().toLowerCase();
     const statusF = $('#statusFilter').value;
 
@@ -1033,6 +1037,11 @@
       if(av > bv) return sortDir === 'asc' ? 1 : -1;
       return 0;
     });
+    return rows;
+  }
+
+  function renderHistory(){
+    const rows = getFilteredSortedSamples();
 
     $$('thead th[data-sort]').forEach(th=>{
       th.classList.toggle('sorted', th.dataset.sort === sortKey);
@@ -1044,20 +1053,52 @@
       <tr>
         <td>${escapeHtml(s.productName)}</td>
         <td>${escapeHtml(s.batchNo || '—')}</td>
-        <td>${s.shelfLifeDays ? s.shelfLifeDays + ' days' : '—'}</td>
+        <td>${s.shelfLifeDays ? s.shelfLifeDays + ' hari' : '—'}</td>
         <td>${fmtDate(s.storedDate)}</td>
         <td>${fmtDate(s.dueDate)}</td>
         <td>${statusPillHtml(s)}</td>
         <td>${s.disposedDate ? fmtDate(s.disposedDate) : '—'}</td>
+        <td>${escapeHtml(s.disposalNotes || '—')}</td>
       </tr>
     `).join('');
 
-    $('#historyEmpty').innerHTML = rows.length ? '' : `<div class="empty"><span class="emoji">🔍</span>No samples match.</div>`;
+    $('#historyEmpty').innerHTML = rows.length ? '' : `<div class="empty"><span class="emoji">🔍</span>Tidak ada sampel yang cocok.</div>`;
+  }
+
+  function csvValue(v){
+    if(v === null || v === undefined) return '';
+    const s = String(v);
+    return /[",\n]/.test(s) ? '"' + s.replace(/"/g,'""') + '"' : s;
+  }
+
+  function exportCsv(){
+    const rows = getFilteredSortedSamples();
+    const headers = ['Produk','No. Batch','Lokasi','Umur Simpan (hari)','Masa Simpan (hari)','Disimpan pada','Buang Sebelum','Status','Dibuang pada','Dibuang oleh','Catatan Pembuangan','Jumlah','Catatan'];
+    const lines = [headers.map(csvValue).join(',')];
+    rows.forEach(s=>{
+      lines.push([
+        s.productName, s.batchNo, s.location, s.shelfLifeDays, s.retentionDays,
+        s.storedDate, s.dueDate, s.status === 'disposed' ? 'Dibuang' : 'Tersimpan',
+        s.disposedDate, s.disposedBy, s.disposalNotes, s.quantity, s.notes
+      ].map(csvValue).join(','));
+    });
+    const csvContent = '\uFEFF' + lines.join('\r\n');
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `retain-ck-astro-sampel-${todayISO()}.csv`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(()=> URL.revokeObjectURL(url), 1000);
+    showToast('CSV berhasil diunduh.');
   }
 
   function initHistoryControls(){
     $('#searchBox').addEventListener('input', renderHistory);
     $('#statusFilter').addEventListener('change', renderHistory);
+    $('#exportCsvBtn').addEventListener('click', exportCsv);
     $$('thead th[data-sort]').forEach(th=>{
       th.addEventListener('click', ()=>{
         const key = th.dataset.sort;
@@ -1081,13 +1122,13 @@
         <td>${escapeHtml(p.location)}</td>
         <td>
           <div class="row-actions">
-            <button class="btn btn-ghost btn-sm" data-edit-product="${p.id}">Edit</button>
-            <button class="btn btn-ghost btn-sm" data-del-product="${p.id}" style="color:var(--coral-600);">Delete</button>
+            <button class="btn btn-ghost btn-sm" data-edit-product="${p.id}">Ubah</button>
+            <button class="btn btn-ghost btn-sm" data-del-product="${p.id}" style="color:var(--coral-600);">Hapus</button>
           </div>
         </td>
       </tr>
     `).join('');
-    $('#productsEmpty').innerHTML = sorted.length ? '' : `<div class="empty"><span class="emoji">🥥</span><strong>No products yet</strong>Add your first product above.</div>`;
+    $('#productsEmpty').innerHTML = sorted.length ? '' : `<div class="empty"><span class="emoji">🥥</span><strong>Belum ada produk</strong>Tambahkan produk pertama Anda di atas.</div>`;
 
     $$('[data-edit-product]').forEach(btn=>{
       btn.addEventListener('click', ()=> startEditProduct(btn.dataset.editProduct));
@@ -1105,7 +1146,7 @@
     $('#p_shelflife').value = p.shelfLifeDays || '';
     $('#p_days').value = p.maxStorageDays;
     $('#p_location').value = p.location;
-    $('#productSubmitBtn').textContent = 'Save changes';
+    $('#productSubmitBtn').textContent = 'Simpan Perubahan';
     $('#productCancelEdit').hidden = false;
     $('#p_name').focus();
     window.scrollTo({top:0, behavior:'smooth'});
@@ -1113,7 +1154,7 @@
   function cancelEditProduct(){
     editingProductId = null;
     $('#productForm').reset();
-    $('#productSubmitBtn').textContent = 'Add product';
+    $('#productSubmitBtn').textContent = 'Tambah Produk';
     $('#productCancelEdit').hidden = true;
   }
 
@@ -1122,16 +1163,16 @@
     const id = btn.dataset.delProduct;
     if(pendingProductDelete.has(id)){
       pendingProductDelete.delete(id);
-      Store.deleteProduct(id).then(()=> showToast('Product deleted.')).catch(()=> showToast('Could not delete — try again.'));
+      Store.deleteProduct(id).then(()=> showToast('Produk dihapus.')).catch(()=> showToast('Gagal menghapus — coba lagi.'));
       return;
     }
     pendingProductDelete.add(id);
-    btn.textContent = 'Confirm?';
+    btn.textContent = 'Konfirmasi?';
     btn.classList.add('btn-danger');
     setTimeout(()=>{
       if(pendingProductDelete.has(id)){
         pendingProductDelete.delete(id);
-        btn.textContent = 'Delete';
+        btn.textContent = 'Hapus';
         btn.classList.remove('btn-danger');
       }
     }, 3000);
@@ -1146,7 +1187,7 @@
       const maxStorageDays = Number($('#p_days').value);
       const location = $('#p_location').value.trim();
       if(!name || !shelfLifeDays || !maxStorageDays || !location){
-        showToast('Please fill in all fields.');
+        showToast('Mohon lengkapi semua kolom.');
         return;
       }
       const submitBtn = $('#productSubmitBtn');
@@ -1154,21 +1195,21 @@
       try{
         if(editingProductId){
           await Store.updateProduct(editingProductId, { name, shelfLifeDays, maxStorageDays, location });
-          showToast('Product updated.');
+          showToast('Produk diperbarui.');
         } else {
           const dup = products.some(p=> (p.name||'').toLowerCase() === name.toLowerCase());
           if(dup){
-            showToast('That product already exists — edit it in the list below.');
+            showToast('Produk ini sudah ada — silakan ubah di daftar di bawah.');
             submitBtn.disabled = false;
             return;
           }
           await Store.addProduct({ name, shelfLifeDays, maxStorageDays, location, createdAt: new Date().toISOString() });
-          showToast('Product added.');
+          showToast('Produk ditambahkan.');
         }
         cancelEditProduct();
       }catch(err){
         console.error(err);
-        showToast('Could not save — please try again.');
+        showToast('Gagal menyimpan — silakan coba lagi.');
       }finally{
         submitBtn.disabled = false;
       }
@@ -1180,15 +1221,15 @@
     const sel = $('#f_product');
     const current = sel.value;
     const sorted = products.slice().sort((a,b)=> (a.name||'').localeCompare(b.name||''));
-    sel.innerHTML = '<option value="" disabled ' + (current? '' : 'selected') + '>Select a product…</option>' +
+    sel.innerHTML = '<option value="" disabled ' + (current? '' : 'selected') + '>Pilih produk…</option>' +
       sorted.map(p=> `<option value="${escapeHtml(p.name)}">${escapeHtml(p.name)}</option>`).join('');
     if(current && sorted.some(p=> p.name === current)){ sel.value = current; }
 
     $('#loginNoProducts').innerHTML = products.length ? '' :
       `<div class="card" style="padding:14px 16px; margin-bottom:16px; display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
         <span style="font-size:20px;">🥥</span>
-        <span class="section-sub" style="margin:0;">No products set up yet.</span>
-        <a href="#" class="btn btn-ghost btn-sm" data-goto="products">Add a product</a>
+        <span class="section-sub" style="margin:0;">Belum ada produk yang diatur.</span>
+        <a href="#" class="btn btn-ghost btn-sm" data-goto="products">Tambah produk</a>
       </div>`;
     $$('#loginNoProducts [data-goto]').forEach(el=>{
       el.addEventListener('click', (e)=>{ e.preventDefault(); switchView('products'); });
@@ -1201,8 +1242,8 @@
     const wrap = $('#duePreviewWrap');
     if(ret > 0){
       const due = addDays(today, ret);
-      const wedFlag = isWednesday(due) ? ' — a Wednesday, easy to remember.' : '';
-      wrap.innerHTML = `<div class="due-preview">🗓️ Will be flagged for disposal on <strong>${fmtDate(due)}</strong>${wedFlag}</div>`;
+      const wedFlag = isWednesday(due) ? ' — hari Rabu, mudah diingat.' : '';
+      wrap.innerHTML = `<div class="due-preview">🗓️ Akan ditandai untuk dibuang pada <strong>${fmtDate(due)}</strong>${wedFlag}</div>`;
     } else {
       wrap.innerHTML = '';
     }
@@ -1214,7 +1255,7 @@
     if(p){
       $('#f_retention').value = p.maxStorageDays;
       $('#f_location').value = p.location;
-      $('#f_shelflife_display').textContent = p.shelfLifeDays ? p.shelfLifeDays + ' days' : '—';
+      $('#f_shelflife_display').textContent = p.shelfLifeDays ? p.shelfLifeDays + ' hari' : '—';
     }
     updateDuePreview();
   }
@@ -1236,7 +1277,7 @@
       const shelfLifeDays = selectedProduct ? selectedProduct.shelfLifeDays : null;
 
       if(!productName || !retentionDays || !loggedBy){
-        showToast('Please fill in the required fields.');
+        showToast('Mohon lengkapi kolom yang wajib diisi.');
         return;
       }
 
@@ -1263,18 +1304,18 @@
       submitBtn.disabled = true;
       try{
         await Store.addSample(data);
-        showToast(`Logged in — dispose by ${fmtDate(dueDate)}`);
+        showToast(`Berhasil dicatat — buang sebelum ${fmtDate(dueDate)}`);
         const keepName = $('#f_loggedby').value;
         $('#loginForm').reset();
         $('#f_loggedby').value = keepName;
         $('#f_location').value = '';
         $('#f_retention').value = '';
-        $('#f_shelflife_display').textContent = 'Select a product';
+        $('#f_shelflife_display').textContent = 'Pilih produk';
         $('#f_today_display').textContent = fmtDate(todayISO());
         updateDuePreview();
       }catch(err){
         console.error(err);
-        showToast('Could not save — please try again.');
+        showToast('Gagal menyimpan — silakan coba lagi.');
       }finally{
         submitBtn.disabled = false;
       }
@@ -1287,7 +1328,7 @@
     pendingDisposeId = id;
     const s = samples.find(x=> x.id === id);
     if(!s) return;
-    $('#disposeModalSub').textContent = `${s.productName}${s.batchNo ? ' · ' + s.batchNo : ''} — retained ${fmtDate(s.storedDate)}`;
+    $('#disposeModalSub').textContent = `${s.productName}${s.batchNo ? ' · ' + s.batchNo : ''} — disimpan sejak ${fmtDate(s.storedDate)}`;
     $('#m_disposenotes').value = '';
     const name = $('#whoName').value;
     if(name) $('#m_disposedby').value = name;
@@ -1304,7 +1345,7 @@
     });
     $('#disposeConfirm').addEventListener('click', async ()=>{
       const disposedBy = $('#m_disposedby').value.trim();
-      if(!disposedBy){ showToast('Enter who is disposing this sample.'); return; }
+      if(!disposedBy){ showToast('Masukkan nama yang membuang sampel ini.'); return; }
       if(!pendingDisposeId) return;
       const btn = $('#disposeConfirm');
       btn.disabled = true;
@@ -1315,11 +1356,11 @@
           disposedBy,
           disposalNotes: $('#m_disposenotes').value.trim()
         });
-        showToast('Logged out — sample disposed.');
+        showToast('Berhasil dicatat keluar — sampel telah dibuang.');
         closeDisposeModal();
       }catch(err){
         console.error(err);
-        showToast('Could not update — please try again.');
+        showToast('Gagal memperbarui — silakan coba lagi.');
       }finally{
         btn.disabled = false;
       }
